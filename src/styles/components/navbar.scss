@@ -1,0 +1,151 @@
+header {
+    padding: 25px 15px;
+    position: relative;
+  
+    @include l-screen {
+      padding: 0;
+    }
+  
+  
+    .menu-toggler {
+      position: relative;
+      width: 30px;
+      height: 15px;
+      background: none;
+      border: none;
+      outline: none !important;
+      display: block;
+  
+      span {
+        width: 100%;
+        height: 2px;
+        background: color(black);
+        position: absolute;
+        left: 0;
+  
+        @include transition(all $transition-base-duration $transition-base-ease);
+  
+        &:first-child {
+          top: 0;
+        }
+  
+        &:nth-child(2) {
+          top: 50%;
+  
+          @include transform(translate3d(0, -50%, 0));
+        }
+  
+        &:last-child {
+          top: inherit;
+          bottom: 0;
+        }
+      }
+  
+      &.open {
+        span {
+          &:nth-child(2) {
+            opacity: 0;
+          }
+  
+          &:first-child,
+          &:last-child {
+            left: 50%;
+            top: 50%;
+            bottom: inherit;
+  
+            @include transform(translate3d(-50%, -50%, 0) rotate(45deg));
+          }
+  
+          &:last-child {
+            @include transform(translate3d(-50%, -50%, 0) rotate(-45deg));
+          }
+        }
+      }
+    }
+  
+    .menu-container {
+      position: absolute;
+      width: 100%;
+      height: calc( 100vh - 74px );
+      top: 100%;
+      left: 0;
+      align-items: center;
+      display: none;
+      z-index: 10;
+      background: color(white);
+  
+      &.open {
+        display: flex;
+      }
+  
+      @include l-screen {
+        display: block;
+        position: relative;
+        top: inherit;
+        height: auto;
+        width: auto;
+      }
+  
+  
+      .menu {
+        @include no-list-style;
+  
+        flex: none;
+        width: 100%;
+  
+        @include l-screen {
+          width: auto;
+          display: flex;
+        }
+  
+  
+        li {
+          text-align: center;
+          padding: 15px 0;
+  
+          @include l-screen {
+            padding: 0 30px;
+          }
+  
+  
+          a {
+            color: color(gray);
+            text-decoration: none;
+  
+            @include transition(color $transition-base-duration $transition-base-ease);
+            @include l-screen {
+              display: block;
+              padding-top: 30px;
+              padding-bottom: 30px;
+              position: relative;
+  
+              &::after {
+                content: "";
+                position: absolute;
+                width: 0;
+                padding: 2px 0;
+  
+                @include linear-gradient(90deg, map-get($gradient-colors, gradient-green-blue));
+  
+                bottom: 0;
+                left: 50%;
+                opacity: 0;
+  
+                @include transform(translateX(-50%));
+                @include transition(all $transition-base-duration $transition-base-ease);
+              }
+  
+              &:hover {
+                color: color(black);
+  
+                &:after {
+                  opacity: 1;
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

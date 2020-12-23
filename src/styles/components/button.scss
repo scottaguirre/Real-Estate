@@ -1,0 +1,30 @@
+.btn {
+  padding: 15px 30px !important;
+  font-weight: 600 !important;
+  color: color(white) !important;
+  border: 2px solid white;
+  border-radius: 0 !important;
+  background: rgb(211, 106, 8) !important;
+
+  &:hover {
+    color: rgb(211, 106, 8) !important;
+    border: 2px solid rgb(211, 106, 8);
+    background: white !important;
+  }
+
+  @include responsive(1600px) {
+    font-size: 18px;
+  }
+}
+
+.btn-variation {
+  background: color(white) !important;
+  color: rgb(211, 106, 8) !important;
+  border: 2px solid rgb(211, 106, 8);
+
+  &:hover {
+    color: white !important;
+    border: 2px solid white;
+    background: rgb(211, 106, 8) !important;
+  }
+}

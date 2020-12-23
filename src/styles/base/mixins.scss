@@ -1,0 +1,95 @@
+// This mixin will repeat the css declaration with selected prefixes
+@mixin prefix($declarations, $prefixes: ()) {
+  @each $property, $value in $declarations {
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: $value;
+    }
+    #{$property}: $value;
+  }
+}
+
+// This mixin will be used to set the css transform declaration with its prefixes
+@mixin transform($properties...) {
+  @include prefix(
+    (
+      transform: $properties,
+    ),
+    webkit moz
+  );
+}
+
+// This mixin will be used to set the css transition declaration with its prefixes
+@mixin transition($properties...) {
+  @include prefix(
+    (
+      transition: $properties,
+    ),
+    webkit moz
+  );
+}
+
+// All of these mixins will be used to make a contraction to use media queries declarations
+@mixin responsive($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin xxl-screen {
+  @include responsive($extra-extra-large-screen-size) {
+    @content;
+  }
+}
+
+@mixin xl-screen {
+  @include responsive($extra-large-screen-size) {
+    @content;
+  }
+}
+
+@mixin l-screen {
+  @include responsive($large-screen-size) {
+    @content;
+  }
+}
+
+@mixin m-screen {
+  @include responsive($medium-screen-size) {
+    @content;
+  }
+}
+
+@mixin s-screen {
+  @include responsive($small-screen-size) {
+    @content;
+  }
+}
+
+// This mixin removes all the list styles
+@mixin no-list-style {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// This mixin create gradient backgrounds
+@mixin linear-gradient($degrees, $colors...) {
+  background: -moz-linear-gradient($degrees, $colors);
+  background: -webkit-linear-gradient($degrees, $colors);
+  background: linear-gradient($degrees, $colors);
+}
+
+// Reset
+
+@mixin reset {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+// animations
+
+@mixin animation {
+  opacity: 1;
+  transition: all 700ms linear 1s;
+}

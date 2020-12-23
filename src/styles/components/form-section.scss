@@ -1,0 +1,75 @@
+section.form-section {
+  width: 100%;
+  padding: 80px 0;
+  margin: 0;
+  background: black;
+
+  h2 {
+    color: white;
+    font-style: italic;
+    font-size: 26px;
+    letter-spacing: -1.2px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  form.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    .col-8 {
+      padding: 5px 0;
+      display: flex;
+      flex-wrap: nowrap;
+      max-width: 500px;
+      align-items: center;
+      //background: green;
+
+      input {
+        position: relative;
+        padding: 8px 45px 8px 0;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        border-bottom: 2px solid white;
+        outline: none !important;
+        width: 100%;
+        //background: pink;
+
+        &:focus {
+          box-shadow: none !important;
+        }
+
+        &.form-control::-webkit-input-placeholder {
+          color: white;
+        }
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        background: transparent !important;
+        border: 0;
+        margin: 0;
+        padding: 0 !important;
+        width: auto;
+
+        span {
+          display: inline-block;
+          margin-right: 10px;
+          //background: yellow;
+        }
+
+        .bi .bi-envelope {
+          color: white;
+          margin: 0;
+          width: 26px;
+          height: 25px;
+          background: blue;
+        }
+      }
+    }
+  }
+}

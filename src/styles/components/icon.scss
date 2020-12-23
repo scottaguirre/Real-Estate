@@ -1,0 +1,26 @@
+.icon {
+    width: 80px;
+    height: 80px;
+    padding: 17px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    @include linear-gradient(135deg, map-get($gradient-colors, gradient-green-blue));
+  
+    img {
+      flex: none;
+    }
+  
+    @include l-screen {
+      width: 70px;
+      height: 70px;
+    }
+  
+  
+    @include responsive(1600px) {
+      width: 96px;
+      height: 96px;
+    }
+}
