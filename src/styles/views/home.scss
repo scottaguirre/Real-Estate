@@ -1,38 +1,38 @@
-.overlay-effect-container {
-  overflow: hidden;
-  position: fixed;
-  display: block;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100%;
-  z-index: 10;
-  background: transparent !important;
-  visibility: visible;
-  opacity: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.5s ease 2s;
+// .overlay-effect-container {
+//   overflow: hidden;
+//   position: fixed;
+//   display: block;
+//   top: 0;
+//   left: 0;
+//   width: 100% !important;
+//   height: 100%;
+//   z-index: 10;
+//   background: transparent !important;
+//   visibility: visible;
+//   opacity: 1;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   transition: all 0.5s ease 2s;
 
-  &.effect-applied {
-    z-index: -20;
-  }
+//   &.effect-applied {
+//     z-index: -20;
+//   }
 
-  .initial-overlay-effect {
-    position: absolute;
-    margin: auto;
-    width: 100vw;
-    height: 100vh;
-    z-index: 11;
-    background: black;
-    transition: all 2s ease;
-  }
+//   .initial-overlay-effect {
+//     position: absolute;
+//     margin: auto;
+//     width: 100vw;
+//     height: 100vh;
+//     z-index: 11;
+//     background: black;
+//     transition: all 2s ease;
+//   }
 
-  .initial-overlay-effect.effect-applied {
-    height: 0;
-  }
-}
+//   .initial-overlay-effect.effect-applied {
+//     height: 0;
+//   }
+// }
 
 #home-page {
   #platform-benefits {

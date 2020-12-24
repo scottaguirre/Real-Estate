@@ -1,7 +1,13 @@
 section.hero-section
     .container-fluid
-        .row.justify-content-center
-            .col-auto
-                .content-wrapper.animation-element.slide-top
-                    h1 READY FOR ANYTHING.
-                    button.btn.btn-outline-primary BUY NOW
+        .row
+            .col-12
+                #carouselExampleFade.carousel.slide.carousel-fade(data-ride="carousel")
+                    .carousel-inner
+                        .carousel-item.active(data-bs-interval="4000")
+                            img(src="http://localhost:5500/dist/images/slider1_01-1600x830.jpg" alt="image1").d-block.w-100
+                        .carousel-item(data-bs-interval="4000")
+                            img(src="http://localhost:5500/dist/images/slider2_01-1600x830.jpg" alt="image2").d-block.w-100
+                        .carousel-item(data-bs-interval="4000")
+                            img(src="http://localhost:5500/dist/images/slider3_01-1600x830.jpg" alt="image3").d-block.w-100
+                    
