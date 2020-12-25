@@ -1,0 +1,29 @@
+section.profile-section
+    .container-fluid
+        .row
+            .col-xs-6
+                .profile-image
+                    img(src='http://localhost:5500/dist/images/agent-pic2.jpg' alt='')
+                .info
+                    h4 EGYPT SHERROD
+                    p OFFICE 770.8746228
+                    P DIRECT 770.851.7638
+                    include ../icons/email.pug 
+                    p Egypt@EgyptSherrodRealEstate.com
+            .col-xs-6
+                .form-wrapper
+                    form.row
+                        .col-12 
+                            h3.text-center GET IN TOUCH
+                        .col-12
+                            input(type="text" name="name" placeholder="Name").form-control 
+                        .col-12
+                            input(type="email" name="email" placeholder="Email")#inputEmail4.form-control
+                        .col-12
+                            input(type="text" name="phone" placeholder="Contact Number")#Contact.form-control
+                        .col-12
+                            input(type="text" name="message" placeholder="Message")#message.form-control
+                        .col-12
+                            button(type="submit").btn.btn-primary SUBMIT
+    
+        
