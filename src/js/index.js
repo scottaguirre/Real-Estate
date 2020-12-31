@@ -5,7 +5,7 @@ import {
   animateElementsInView,
 } from './components';
 
-// headerTopAnimation();
+headerTopAnimation();
 menu();
 animateElementsInView();
 // carousel();
