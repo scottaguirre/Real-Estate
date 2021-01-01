@@ -38,21 +38,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* provided dependency */ var
 
 /***/ }),
 
-/***/ "./src/js/components/carousel.js":
-/*!***************************************!*\
-  !*** ./src/js/components/carousel.js ***!
-  \***************************************/
-/*! namespace exports */
-/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.* */
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nvar carousel = function carousel() {\n  // get the width of the container\n  var carousel_item_img = document.querySelectorAll('.carousel-item-img');\n  var num = 0;\n  var slideTransitionDuration = null;\n\n  var gettingContainerImgtWith = function gettingContainerImgtWith() {\n    var containerImageTotalWith = null; // getting the margin of an element\n\n    var style = getComputedStyle(carousel_item_img[0]);\n    var marginLeft = parseInt(style.marginLeft);\n    var marginRight = parseInt(style.marginRight); // getting the offset of an element; including content, border, padding but not margin\n\n    var offsetImage = carousel_item_img[0].offsetWidth; // result of adding content + margin\n\n    containerImageTotalWith = offsetImage + marginLeft + marginRight;\n    return containerImageTotalWith;\n  }; // adding translate values and class to move container-image to the left every 3 seconds\n\n\n  var updatinTheValueOfNum = function updatinTheValueOfNum(elem) {\n    if (elem.textAlign === 'right') {\n      num = carousel_item_img.length - 1;\n    } else if (elem.textAlign === 'center') {\n      num = carousel_item_img.length - 2;\n    } else {\n      num = carousel_item_img.length - 3;\n    }\n  };\n\n  var runningCarousel = function runningCarousel() {\n    var elem = getComputedStyle(carousel_item_img[0]);\n    updatinTheValueOfNum(elem);\n    var count = 1;\n    slideTransitionDuration = setInterval(function () {\n      if (count <= num) {\n        carousel_item_img.forEach(function (container_image) {\n          container_image.style.transition = \"all 0.6s ease-in-out\";\n          container_image.style.transform = \"translateX(-\".concat(gettingContainerImgtWith() * count, \"px)\");\n        });\n        count++;\n      } else {\n        carousel_item_img.forEach(function (container_image) {\n          container_image.style.transition = \"none\";\n          container_image.style.transform = \"translateX(0)\";\n        });\n        count = 1;\n      }\n    }, 3000);\n  };\n\n  var adaptingToWindowSize = function adaptingToWindowSize() {\n    clearInterval(slideTransitionDuration);\n    runningCarousel();\n  };\n\n  runningCarousel();\n  window.addEventListener('resize', adaptingToWindowSize);\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (carousel);\n\n//# sourceURL=webpack://easy-bank/./src/js/components/carousel.js?");
-
-/***/ }),
-
 /***/ "./src/js/components/headerTopAnimation.js":
 /*!*************************************************!*\
   !*** ./src/js/components/headerTopAnimation.js ***!
@@ -74,7 +59,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* provided dependency */ var
   \************************************/
 /*! namespace exports */
 /*! export animateElementsInView [provided] [no usage info] [missing usage info prevents renaming] -> ./src/js/components/animateElementsInView.js .default */
-/*! export carousel [provided] [no usage info] [missing usage info prevents renaming] -> ./src/js/components/carousel.js .default */
+/*! export carousel [provided] [no usage info] [missing usage info prevents renaming] -> ./src/js/components/infiniteLoopCarousel.js .default */
 /*! export headerTopAnimation [provided] [no usage info] [missing usage info prevents renaming] -> ./src/js/components/headerTopAnimation.js .default */
 /*! export menu [provided] [no usage info] [missing usage info prevents renaming] -> ./src/js/components/menu.js .default */
 /*! other exports [not provided] [no usage info] */
@@ -82,7 +67,22 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* provided dependency */ var
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"menu\": function() { return /* reexport safe */ _menu__WEBPACK_IMPORTED_MODULE_0__.default; },\n/* harmony export */   \"headerTopAnimation\": function() { return /* reexport safe */ _headerTopAnimation__WEBPACK_IMPORTED_MODULE_1__.default; },\n/* harmony export */   \"carousel\": function() { return /* reexport safe */ _carousel__WEBPACK_IMPORTED_MODULE_2__.default; },\n/* harmony export */   \"animateElementsInView\": function() { return /* reexport safe */ _animateElementsInView__WEBPACK_IMPORTED_MODULE_3__.default; }\n/* harmony export */ });\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./menu */ \"./src/js/components/menu.js\");\n/* harmony import */ var _headerTopAnimation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./headerTopAnimation */ \"./src/js/components/headerTopAnimation.js\");\n/* harmony import */ var _carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./carousel */ \"./src/js/components/carousel.js\");\n/* harmony import */ var _animateElementsInView__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./animateElementsInView */ \"./src/js/components/animateElementsInView.js\");\n\n\n\n\n\n\n//# sourceURL=webpack://easy-bank/./src/js/components/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"menu\": function() { return /* reexport safe */ _menu__WEBPACK_IMPORTED_MODULE_0__.default; },\n/* harmony export */   \"headerTopAnimation\": function() { return /* reexport safe */ _headerTopAnimation__WEBPACK_IMPORTED_MODULE_1__.default; },\n/* harmony export */   \"carousel\": function() { return /* reexport safe */ _infiniteLoopCarousel__WEBPACK_IMPORTED_MODULE_2__.default; },\n/* harmony export */   \"animateElementsInView\": function() { return /* reexport safe */ _animateElementsInView__WEBPACK_IMPORTED_MODULE_3__.default; }\n/* harmony export */ });\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./menu */ \"./src/js/components/menu.js\");\n/* harmony import */ var _headerTopAnimation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./headerTopAnimation */ \"./src/js/components/headerTopAnimation.js\");\n/* harmony import */ var _infiniteLoopCarousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./infiniteLoopCarousel */ \"./src/js/components/infiniteLoopCarousel.js\");\n/* harmony import */ var _animateElementsInView__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./animateElementsInView */ \"./src/js/components/animateElementsInView.js\");\n\n\n\n\n\n\n//# sourceURL=webpack://easy-bank/./src/js/components/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/components/infiniteLoopCarousel.js":
+/*!***************************************************!*\
+  !*** ./src/js/components/infiniteLoopCarousel.js ***!
+  \***************************************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.* */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nvar carousel = function carousel() {\n  // get the width of the image container\n  var carousel_item_img = document.querySelectorAll('.carousel-item-img');\n  var carousel_featured_properties = document.querySelector('.carousel-featured-properties');\n  var slideTransitionDuration = null;\n\n  var gettingContainerImgWidth = function gettingContainerImgWidth() {\n    var containerImageTotalWidth = null; // getting the margin of an element\n\n    var style = getComputedStyle(carousel_item_img[0]);\n    var marginLeft = parseInt(style.marginLeft);\n    var marginRight = parseInt(style.marginRight); // getting the offset of an element; including content, border, padding but not margin\n\n    var offsetImage = carousel_item_img[0].offsetWidth; // result of adding content + margin\n\n    containerImageTotalWidth = offsetImage + marginLeft + marginRight;\n    return containerImageTotalWidth;\n  }; // adding translate values and class to move container-image to the left every 3 seconds\n\n\n  var runningCarousel = function runningCarousel() {\n    slideTransitionDuration = setInterval(function () {\n      // 1. Starting the transition\n      carousel_featured_properties.style.transform = \"translateX(-\".concat(gettingContainerImgWidth(), \"px)\"); // 2. Declaring the function that's triggered when the transition end.\n\n      var appendContainerImg = function appendContainerImg() {\n        carousel_featured_properties.style.transition = \"none\";\n        carousel_featured_properties.style.transform = \"translateX(0)\";\n        carousel_featured_properties.appendChild(carousel_featured_properties.firstElementChild);\n      }; // 3. Adding transitioned eventlistener\n\n\n      carousel_featured_properties.addEventListener('transitionend', appendContainerImg); // 4. Removing transitioned eventlistener when transition ends\n\n      setTimeout(function () {\n        carousel_featured_properties.removeEventListener('transitionend', appendContainerImg);\n        carousel_featured_properties.style.transition = \"all 0.6s linear\";\n      }, 650);\n    }, 3000);\n  };\n\n  runningCarousel();\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (carousel);\n\n//# sourceURL=webpack://easy-bank/./src/js/components/infiniteLoopCarousel.js?");
 
 /***/ }),
 
@@ -111,7 +111,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nvar menu = function menu() {\
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components */ \"./src/js/components/index.js\");\n\n(0,_components__WEBPACK_IMPORTED_MODULE_0__.headerTopAnimation)();\n(0,_components__WEBPACK_IMPORTED_MODULE_0__.menu)();\n(0,_components__WEBPACK_IMPORTED_MODULE_0__.animateElementsInView)(); // carousel();\n\n//# sourceURL=webpack://easy-bank/./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components */ \"./src/js/components/index.js\");\n\n(0,_components__WEBPACK_IMPORTED_MODULE_0__.headerTopAnimation)();\n(0,_components__WEBPACK_IMPORTED_MODULE_0__.menu)();\n(0,_components__WEBPACK_IMPORTED_MODULE_0__.animateElementsInView)();\n(0,_components__WEBPACK_IMPORTED_MODULE_0__.carousel)();\n\n//# sourceURL=webpack://easy-bank/./src/js/index.js?");
 
 /***/ }),
 

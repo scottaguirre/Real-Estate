@@ -20,19 +20,19 @@
 
   .carousel1 {
     display: flex;
-    //background: yellow;
     overflow: hidden;
     margin-bottom: 50px;
+    //background: yellow;
 
     .carousel-item-img {
       position: relative;
-      //background: blue;
       padding: 0;
       margin: 0 auto;
       width: 100%;
       flex-shrink: 0;
       transition: all 0.6s ease-in-out;
       text-align: right;
+      //background: blue;
 
       @include m-screen {
         width: 49% !important;

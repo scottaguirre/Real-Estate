@@ -8,4 +8,4 @@ import {
 headerTopAnimation();
 menu();
 animateElementsInView();
-// carousel();
+carousel();
