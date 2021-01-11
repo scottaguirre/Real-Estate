@@ -1,0 +1,6 @@
+// This is a function to access to $colors map in the derived-varaibles file
+@function color($color: null) {
+    @if $color {
+        @return map-get($colors, $color);
+    }
+}

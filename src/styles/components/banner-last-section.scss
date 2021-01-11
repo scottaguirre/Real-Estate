@@ -1,0 +1,36 @@
+section.second-section,
+.container-fluid,
+.row.banner-last-section-row,
+.col {
+  @include reset;
+}
+
+.banner-last-section-row {
+  .col {
+    padding: 140px 0 160px;
+    background: linear-gradient(rgba(black, 0.5), rgba(black, 0.6)),
+      url("http://localhost:5500/dist/images/bestOS.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include m-screen {
+      padding: 180px 0;
+    }
+
+    h2.heading {
+      @include reset;
+      color: white;
+      font-style: italic;
+      margin-bottom: 30px;
+
+      @include m-screen {
+        margin-bottom: 50px;
+      }
+    }
+
+    button.btn {
+      margin: 0 auto;
+    }
+  }
+}

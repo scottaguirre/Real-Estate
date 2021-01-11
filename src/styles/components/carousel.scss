@@ -1,0 +1,60 @@
+.carousel-section,
+.container-fluif,
+.row,
+.col-carousel,
+.carousel1 {
+  @include reset;
+  //background: yellow !important;
+}
+
+.col-carousel {
+  //background: red;
+  padding: 80px 0;
+  margin: auto;
+
+  h2.products {
+    padding: 0;
+    margin: 0 auto;
+    margin-bottom: 70px;
+  }
+
+  .carousel1 {
+    display: flex;
+    //background: yellow;
+    overflow: hidden;
+    margin-bottom: 50px;
+
+    .carousel-item-img {
+      position: relative;
+      //background: blue;
+      padding: 0;
+      margin: 0 auto;
+      width: 100%;
+      flex-shrink: 0;
+      transition: all 0.6s ease-in-out;
+      text-align: right;
+
+      @include m-screen {
+        width: 49% !important;
+        margin-right: 1%;
+        text-align: center;
+      }
+
+      @include xl-screen {
+        width: 33.333333333% !important;
+        margin-right: 1%;
+        text-align: left;
+      }
+
+      img {
+        width: 400px;
+        min-width: 400px;
+        margin: auto;
+      }
+    }
+  }
+
+  .btn {
+    margin: 0 auto;
+  }
+}

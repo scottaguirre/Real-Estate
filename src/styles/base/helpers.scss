@@ -1,0 +1,17 @@
+// This is an @each to loop the $colors map and create helper clases for background and text color
+@each $color-name, $color in $colors {
+  .background-#{$color-name} {
+    background-color: $color;
+  }
+
+  .text-#{$color-name} {
+    color: $color;
+  }
+}
+
+// Loop to create helper classes for gradient backgrounds
+@each $gradient-name, $gradient-color in $gradient-colors {
+  .background-#{$gradient-name} {
+    @include linear-gradient(90deg, $gradient-color);
+  }
+}

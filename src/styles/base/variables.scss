@@ -1,0 +1,22 @@
+$base-size: 14px;
+
+// colors
+$orange: rgba(255, 102, 0, 0.5);
+$blue: #2cbdc0;
+$dark-blue: #2d314e;
+$dark-gray: #31334a;
+$gray: #95959d;
+$light-gray-1: #f4f5f7;
+$light-gray-2: #fafafa;
+$white: #ffffff;
+
+// others
+$font-family: "Libre Franklin", sans-serif;
+$transition-base-ease: cubic-bezier(0.16, 1.08, 0.38, 0.98);
+$transition-base-duration: 600ms;
+
+$extra-extra-large-screen-size: 1400px;
+$extra-large-screen-size: 1200px;
+$large-screen-size: 992px;
+$medium-screen-size: 768px;
+$small-screen-size: 576px;

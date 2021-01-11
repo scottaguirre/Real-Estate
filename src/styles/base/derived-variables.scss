@@ -1,0 +1,19 @@
+// Map of colors to use with a color function and to create helper classes
+$colors: (
+  primary: $orange,
+  secondary: $blue,
+  dark-blue: $dark-blue,
+  black: $dark-gray,
+  white: $white,
+  light-gray: $light-gray-1,
+  lightest-gray: $light-gray-2,
+  gray: $gray,
+);
+
+// Map of gradient colors to create helper classes
+$gradient-colors: (
+  gradient-green-blue: (
+    $orange,
+    $blue,
+  ),
+);

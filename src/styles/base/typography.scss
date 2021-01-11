@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600&display=swap");
+
+* {
+  font-family: $font-family;
+}
+
+html {
+  color: color(black);
+}
+
+p {
+  color: color(black);
+
+  @include responsive(1600px) {
+    font-size: 18px;
+  }
+}

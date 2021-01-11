@@ -1,0 +1,206 @@
+header {
+  font-size: 20px;
+  width: 100%;
+  height: auto;
+  padding: 0 0;
+  //background: rgba(black, 0.3);
+  margin: 0;
+  position: absolute;
+  z-index: 1;
+
+  nav {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    //background: yellow;
+
+    .row {
+      margin: 0;
+      padding: 0px 30px;
+      //background: red;
+
+      .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 10px;
+        //background: white;
+
+        #logo {
+          display: block;
+          max-width: 160px;
+          width: 180px;
+        }
+      }
+
+      .btn-container {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        //background: black;
+        padding: 0;
+        margin: 0;
+        z-index: 1;
+
+        .cover {
+          z-index: 4;
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          //background: rgba(white, 0);
+          padding: 0;
+          margin: 0;
+          top: 0;
+          left: 0;
+          cursor: pointer;
+        }
+
+        .hamburger {
+          z-index: 2;
+          width: 30px;
+          height: 3px;
+          position: relative;
+          display: block;
+          background: white;
+          padding: 0;
+          margin: 0;
+          transition: all 0.5s ease-in-out;
+        }
+
+        .hamburger.open {
+          background: transparent;
+        }
+
+        .hamburger::before,
+        .hamburger::after {
+          z-index: 3;
+          content: "" !important;
+          width: 30px;
+          height: 3px;
+          display: block;
+          position: absolute;
+          background: white;
+          padding: 0;
+          margin: 0;
+          top: 0;
+          left: 0;
+          transition: all 0.5s ease-in-out;
+        }
+
+        .hamburger::before {
+          transform: translateY(8px) !important;
+        }
+
+        .hamburger::after {
+          transform: translateY(-8px) !important;
+        }
+
+        .open::before {
+          background: white;
+          transform: rotate(-45deg) !important;
+        }
+
+        .open::after {
+          background: white;
+          transform: rotate(45deg) !important;
+        }
+      }
+
+      .menu-container {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 0;
+        display: block;
+        width: 100vw;
+        height: auto;
+        //background: blue;
+        padding: 0;
+        margin: 0;
+        visibility: hidden;
+        transition: all 0.5s ease-in-out;
+
+        @include l-screen {
+          position: static;
+          width: auto;
+          visibility: visible;
+          //background: white;
+        }
+
+        ul.container-menu-items {
+          width: auto;
+          height: 100vh;
+          background: rgb(211, 106, 8);
+          padding: 0;
+          padding-top: 100px;
+          margin: 0 auto;
+          text-align: center;
+          transform: translateY(-100%);
+          transition: all 0.6s ease-in;
+
+          @include l-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            padding: 0;
+            transform: translateY(0);
+            transition: none;
+            padding: 0 10px;
+            background: transparent;
+          }
+
+          li {
+            list-style: none;
+            //background: white;
+            padding: 25px 0;
+
+            @include l-screen {
+              padding: 10px 20px;
+            }
+
+            a {
+              color: white;
+              text-decoration: none;
+              font-weight: bold;
+              padding-top: 5px;
+              padding-bottom: 5px;
+              border-bottom: 5px solid transparent;
+              transition: all 0.3s ease-in-out;
+              //background: blue;
+
+              @include l-screen {
+                &:hover {
+                  border-bottom: 4px solid rgb(211, 106, 8);
+                }
+              }
+              &.active {
+                padding: 5px 12px;
+                border-radius: 1px;
+                background: rgb(211, 106, 8);
+                border-bottom: 4px solid white;
+
+                @include l-screen {
+                  border-bottom: 4px solid rgb(211, 106, 8);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .menu-container.open {
+        transform: translateY(0);
+        visibility: visible;
+
+        ul.container-menu-items {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}

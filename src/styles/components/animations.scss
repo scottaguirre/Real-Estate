@@ -1,0 +1,34 @@
+// ========= Animation  ============
+
+// ========= Top
+.slide-top {
+  opacity: 0;
+  transform: translateY(-55px);
+}
+
+.in-view-top {
+  @include animation;
+  transform: translateY(0px);
+}
+
+// ========= Left
+.slide-left {
+  opacity: 0;
+  transform: translateX(-35px);
+}
+
+.in-view-left {
+  @include animation;
+  transform: translateX(0px);
+}
+
+// ========= Right
+.slide-right {
+  opacity: 0;
+  transform: translateX(35px);
+}
+
+.in-view-right {
+  @include animation;
+  transform: translateX(0px);
+}
