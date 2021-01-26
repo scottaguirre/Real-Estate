@@ -1,0 +1,231 @@
+.header-small {
+  position: fixed;
+  z-index: 4;
+  font-size: 16.5px;
+  width: 100%;
+  height: auto;
+  padding: 0 0;
+  margin: 0;
+  border-bottom: 2px solid #9c5c9c;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.3);
+  background: color(white);
+
+  @include l-screen {
+    top: -100px;
+    background-color: rgba(255, 255, 255, 0.78);
+    transition: top 0.6s linear;
+
+    &.header-effect {
+      top: 0;
+    }
+  }
+
+  nav {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    //background: yellow;
+
+    .row {
+      width: 100%;
+      margin: 0;
+      padding: 0 15px;
+      //background: red;
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        margin: 0;
+        //background: black;
+
+        #logo {
+          max-width: 250px;
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      .btn-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 26px;
+        height: 30px;
+        padding: 0;
+        margin: 0;
+        z-index: 2;
+        //background: black;
+
+        span.cover {
+          z-index: 4;
+          position: absolute;
+          width: 26px;
+          height: 30px;
+          padding: 0;
+          margin: 0;
+          top: 0;
+          left: 0;
+          cursor: pointer;
+          //background: rgba(pink, 0);
+        }
+
+        span.hamburger {
+          z-index: 3;
+          width: 26px;
+          height: 2px;
+          background: color(dark-gray);
+          padding: 0;
+          margin: 0;
+          transition: all 0.5s ease-in-out;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          flex-wrap: nowrap;
+        }
+
+        .hamburger.open {
+          background: transparent;
+        }
+
+        .hamburger::before,
+        .hamburger::after {
+          position: absolute;
+          content: '' !important;
+          width: 26px;
+          height: 4px;
+          display: block;
+          background: color(dark-gray);
+          padding: 0;
+          margin: 0;
+          border-radius: 18%;
+          transition: all 0.5s ease-in-out;
+        }
+
+        .hamburger::before {
+          transform: translateY(9px) !important;
+        }
+
+        .hamburger::after {
+          transform: translateY(-9px) !important;
+        }
+
+        .open::before {
+          background: color(dark-gray);
+          transform: rotate(-45deg) !important;
+        }
+
+        .open::after {
+          background: color(dark-gray);
+          transform: rotate(45deg) !important;
+        }
+      }
+
+      .menu-container {
+        position: fixed;
+        right: -300px;
+        top: 20px;
+        z-index: 1;
+        display: block;
+        width: 300px;
+        height: 100vh;
+        padding: 0;
+        padding-bottom: 20px;
+        margin: 0;
+        transition: all 0.5s linear;
+        background: white;
+
+        @include l-screen {
+          position: static;
+          width: auto !important;
+          visibility: visible;
+          height: auto;
+          padding: 0;
+          background: transparent;
+        }
+
+        ul.container-menu-items {
+          position: relative;
+          top: -40px;
+          width: 100%;
+          height: 100vh;
+          padding: 0;
+          padding-top: 79px;
+          margin: 0 auto;
+          text-align: center;
+          background: color(white);
+
+          @include l-screen {
+            position: static;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            padding: 0;
+            transition: none;
+            padding: 0 10px;
+            background: rgba(255, 255, 255, 0);
+          }
+
+          li {
+            width: 100%;
+            list-style: none;
+            padding: 0;
+            border-top: color(light-gray) 1px solid;
+            //background: red;
+
+            @include l-screen {
+              width: initial;
+              padding: 10px 15px;
+              border-top: none;
+            }
+
+            a {
+              text-transform: uppercase;
+              display: inline-block;
+              width: 100%;
+              height: auto;
+              color: color(lightest-gray);
+              font-family: $font-family;
+              text-decoration: none;
+              padding: 10px 0;
+              font-size: 14px;
+              //background: blue;
+
+              &:hover {
+                background: #232323;
+                color: color(white);
+              }
+
+              &.active {
+                color: color(white);
+                background: color(dark-gray);
+              }
+
+              @include l-screen {
+                font-weight: 600;
+
+                &.active {
+                  color: color(dark-gray);
+                  background: none;
+                }
+
+                &:hover {
+                  color: #4fb1a2;
+                  background: none;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .menu-container.open {
+        right: 0;
+      }
+    }
+  }
+}

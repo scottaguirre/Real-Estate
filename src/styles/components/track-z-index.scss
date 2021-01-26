@@ -1,0 +1,20 @@
+/*
+
+
+heading-thin.pug
+    position:fixed;
+    z-index: 4;  // starting from mobile version
+
+heading-thick.pug
+    position: fixed;
+    z-index:3;
+
+hero.pug
+    position: relative;
+    z-index: 1;
+
+profile-form.pug
+    position: absolute;
+    z-index:2;
+
+*/

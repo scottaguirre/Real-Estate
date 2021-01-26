@@ -1,11 +1,6 @@
 import menu from './menu';
-import carousel from './carousel';
-import initialOverlayEffect from './initialOverlayEffect';
-import animateElemInView from './animateElemInView';
+import headerTopAnimation from './headerTopAnimation';
+import carouselVariation from './carouselVariation';
+import animateElementsInView from './animateElementsInView';
 
-export { 
-    menu,
-    carousel,
-    animateElemInView,
-    initialOverlayEffect
- };
+export { menu, headerTopAnimation, carouselVariation, animateElementsInView };

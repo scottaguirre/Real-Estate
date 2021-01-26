@@ -1,136 +1,28 @@
-.overlay-effect-container {
-  overflow: hidden;
-  position: fixed;
-  display: block;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100%;
-  z-index: 10;
-  background: transparent !important;
-  visibility: visible;
-  opacity: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.5s ease 2s;
-
-  &.effect-applied {
-    z-index: -20;
-  }
-
-  .initial-overlay-effect {
-    position: absolute;
-    margin: auto;
-    width: 100vw;
-    height: 100vh;
-    z-index: 11;
-    background: black;
-    transition: all 2s ease;
-  }
-
-  .initial-overlay-effect.effect-applied {
-    height: 0;
-  }
-}
-
 #home-page {
-  #platform-benefits {
-    text-align: center;
+  .content-div {
+    @include reset;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    @include m-screen {
+      padding-left: 90px;
+      padding-right: 90px;
+    }
 
     @include l-screen {
-      text-align: left;
-
-      .section-title {
-        br {
-          display: none;
-        }
-      }
-
-      .section-description {
-        max-width: 583px;
-
-        @include responsive(1600px) {
-          max-width: 800px;
-        }
-      }
+      padding-left: 30px;
+      padding-right: 30px;
     }
 
-    .benefit-item {
-      &:not(:last-child) {
-        margin-bottom: 45px;
-      }
-
-      .icon {
-        margin-bottom: 35px;
-      }
-
-      .benefit-title {
-        margin-bottom: 30px;
-        font-size: 18px;
-        font-weight: normal;
-
-        @include responsive(1600px) {
-          font-size: 25px;
-        }
-      }
-    }
-  }
-
-  #latest-articles {
-    .section-title {
-      text-align: center;
-
-      @include l-screen {
-        text-align: left;
-      }
+    @include xl-screen {
+      padding-left: 70px;
+      padding-right: 70px;
     }
 
-    .article-card-container {
-      &:not(:last-child) {
-        margin-bottom: 30px;
-      }
-
-      .card {
-        border-color: transparent;
-        overflow: hidden;
-        cursor: pointer;
-
-        img {
-          object-fit: cover;
-          object-position: 50% 50%;
-
-          @include l-screen {
-            height: 190px;
-          }
-        }
-
-        .card-body {
-          padding: 30px;
-
-          @include l-screen {
-            padding: 24px;
-          }
-
-          .author {
-            font-size: 14px;
-          }
-
-          .card-title {
-            font-size: 16px !important;
-          }
-
-          .article-description {
-            font-size: 12px;
-          }
-        }
-
-        &:hover {
-          .card-title {
-            color: color(primary);
-          }
-        }
-      }
+    @include xxl-screen {
+      padding-left: 120px;
+      padding-right: 120px;
     }
   }
 }

@@ -5,13 +5,13 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
     body
-        .overlay-effect-container
-            .initial-overlay-effect
         main#home-page  
-            include ../components/header.pug
+            include ../components/header-thin.pug
+            include ../components/header-thick.pug
             include ../components/hero.pug
-            include ../components/carousel.pug
-            include ../components/form-section.pug
-            include ../components/second-section.pug
-            include ../components/banner-last-section.pug
-            include ../components/footer.pug
+            .content-div
+                include ../components/profile-form.pug
+                include ../components/three-imgs-section.pug
+                include ../components/welcome-and-form-section.pug
+                include ../components/featured-properties-section.pug
+                //- include ../components/footer.pug

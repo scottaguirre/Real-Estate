@@ -1,0 +1,252 @@
+.welcome-and-form-section,
+.container-fluid,
+.row,
+.col-lg-8,
+.col-lg-8 h1,
+.col-lg-8 h2,
+.col-lg-4,
+.text-wrapper,
+.wrapper,
+.form-wrapper {
+  @include reset;
+  width: 100%;
+}
+
+.first-row {
+  border-bottom: 1px solid lightgray;
+}
+
+.col-lg-8 {
+  padding-right: 20px;
+}
+
+.text-wrapper {
+  @include padding-top-and-bottom;
+  //background: lightgreen;
+
+  h2 {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.5;
+
+    span:first-child {
+      color: color(lightpurple) !important;
+    }
+
+    span:last-child {
+      color: color(lightgreen) !important;
+    }
+  }
+
+  h3 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: color(dark-gray);
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: color($light-gray-1);
+  }
+}
+
+@include l-screen {
+  .get-in-touch-text-wrapper {
+    border-top: 1px solid lightgray;
+    padding-top: 20px;
+
+    width: auto;
+    //background:red;
+
+    .info {
+      h4 {
+        color: gray;
+        margin-bottom: 15px;
+      }
+
+      p {
+        display: inline-block;
+        font-size: 20px;
+        color: color(lightgreen);
+
+        span {
+          display: inline-block;
+          margin-right: 15px;
+          font-size: 12px;
+          font-weight: bold;
+          color: black;
+        }
+      }
+    }
+
+    .pipe-span {
+      display: inline-block;
+      margin-left: 10px;
+      margin-right: 10px;
+      color: black;
+    }
+
+    .purple-p {
+      color: purple;
+    }
+
+    .svg-wrapper {
+      display: inline-block;
+      margin-bottom: 20px;
+
+      svg {
+        @include reset;
+        display: inline-block;
+        color: purple;
+      }
+
+      p {
+        @include reset;
+        display: inline-block;
+        color: purple;
+      }
+    }
+
+    .social-media-bottom-form {
+      @include reset;
+      margin-bottom: 50px;
+      display: inline-block;
+      //background: red;
+
+      span {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 12px;
+        font-weight: bold;
+
+        svg {
+          width: 20px;
+          height: 20px;
+          text-align: left;
+          fill: #4fb1a2 !important;
+          @include reset;
+
+          &:hover {
+            fill: purple !important;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.second-form-wrapper {
+  @include padding-top-and-bottom;
+  border: 1px solid lightgray;
+  background: url('http://localhost:5500/dist/images/glass.png') center 30px
+    no-repeat;
+
+  h3 {
+    font-weight: 400;
+    color: gray;
+    font-size: 23px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #ccc;
+    width: 324px;
+    margin: 0 auto;
+
+    @include m-screen {
+      width: 250px;
+    }
+
+    @include l-screen {
+      width: 290px;
+    }
+
+    @include xl-screen {
+      width: 324px;
+    }
+  }
+
+  form.row {
+    padding: 23px 35px 25px;
+    //background: lightblue;
+
+    @include l-screen {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    @include xl-screen {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    label {
+      font-size: 13px;
+      color: #333;
+      padding-bottom: 0;
+      margin-bottom: 2px;
+    }
+
+    .input-group {
+      //background: red;
+
+      select {
+        font-size: 12px;
+        color: #585858;
+        padding: 5px;
+        width: 100%;
+        border: 1px solid gray;
+        //background: blue;
+      }
+    }
+
+    .col-6 {
+      @include reset;
+    }
+
+    .col-6-padding-rigth {
+      padding-right: 5px !important;
+    }
+
+    .col-6-padding-left {
+      padding-left: 5px !important;
+    }
+
+    .buttons-wrapper {
+      @include reset;
+      width: auto;
+      margin-top: 20px !important;
+      margin: auto;
+      //background: red;
+
+      .btn-variation:first-child {
+        margin-right: 10px;
+
+        @include l-screen {
+          margin-right: 7px;
+        }
+
+        @include xl-screen {
+          margin-right: 10px;
+        }
+      }
+
+      .btn-variation:last-child {
+        margin-left: 10px;
+
+        @include l-screen {
+          margin-left: 7px;
+        }
+
+        @include xl-screen {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

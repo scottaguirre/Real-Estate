@@ -1,5 +1,11 @@
-import { menu, carousel, initialOverlayEffect } from './components';
+import {
+  menu,
+  headerTopAnimation,
+  carouselVariation,
+  animateElementsInView,
+} from './components';
 
-initialOverlayEffect();
+headerTopAnimation();
 menu();
-carousel();
+animateElementsInView();
+carouselVariation();
